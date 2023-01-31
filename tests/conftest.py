@@ -3,13 +3,13 @@ import pytest
 
 class User:
 
-    def __init__(self) -> None:
-        self.name = None
-        self.second_name = None
+    def __init__(self, name=None, second_name=None):
+        self.name = name
+        self.second_name = second_name
 
-    def create(self):
-        self.name = 'Henry'
-        self.second_name = 'Chinaski'
+    def create(self, first_name, last_name):
+        self.name = first_name
+        self.second_name = last_name
 
     def remove(self):
         self.name = ''
@@ -19,8 +19,6 @@ class User:
 @pytest.fixture
 def user():
     user = User()
-    user.create()
-
+    user.create('Henry', 'Chinaski')
     yield user
-
     user.remove()
