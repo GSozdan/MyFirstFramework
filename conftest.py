@@ -4,17 +4,17 @@ from modules.api.clients.github import GitHub
 
 class User:
 
-    def __init__(self, name=None, second_name=None):
-        self.name = name
-        self.second_name = second_name
+    def __init__(self, first_name, last_name) -> None:
+        self.first_name = first_name
+        self.last_name = last_name
 
     def create(self, first_name, last_name):
-        self.name = first_name
-        self.second_name = last_name
+        self.first_name = first_name
+        self.last_name = last_name
 
     def remove(self):
-        self.name = ''
-        self.second_name = ''
+        self.first_name = ''
+        self.last_name = ''
 
 
 @pytest.fixture
