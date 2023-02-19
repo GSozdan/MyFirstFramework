@@ -8,4 +8,4 @@ def test_change_first_name(user):
 
 @pytest.mark.check
 def test_change_last_name(user):
-    assert user.last_name == 'Chinasky'
+    assert user.last_name == 'Chinaski'
